@@ -1,0 +1,63 @@
+/* assets/scss/_custom-layouts.scss - FINAL, HYBRID SOLUTION */
+
+/* 1. CONTAINER RULES: Enable Flexbox and Center */
+.content .custom-n-col-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 25px; 
+    
+    /* ADD THIS LINE: Vertically centers items within the row */
+    align-items: center; 
+    
+    /* Center the layout visually */
+    justify-content: center; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: auto; 
+    max-width: none;
+    padding: 0;
+    margin-bottom: 15px; 
+}
+
+/* 2. COLUMN ITEM RULES: Ensure items respect the inline pixel width */
+.content .custom-n-col-container .custom-n-col-item {
+    padding: 0;
+    flex-shrink: 0; 
+    box-sizing: border-box; 
+    flex-grow: 0; /* Prevents columns from growing beyond their pixel width */
+
+    /* Ensure the inline pixel width is honored */
+    max-width: none;
+    flex: none; 
+}
+
+/* 3. IMAGE CONSTRAINT */
+.custom-n-col-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. RESPONSIVE BREAKPOINT (TABLET/MOBILE) */
+/* Stacks the columns when the screen width is 767px or less */
+@media (max-width: 767px) { 
+    .content .custom-n-col-container .custom-n-col-item {
+        width: 100% !important; 
+        flex-basis: 100% !important; 
+    }
+}
+
+/* 5. MOBILE REORDERING (SWAP) */
+/* This only applies to the rows marked with the 'swap-order' class */
+@media (max-width: 767px) {
+    .content .swap-order .custom-n-col-item:nth-child(1) {
+        /* Col 1 (Image) moves to the end */
+        order: 2;
+    }
+    
+    .content .swap-order .custom-n-col-item:nth-child(2) {
+        /* Col 2 (Text) moves to the start */
+        order: 1;
+    }
+}

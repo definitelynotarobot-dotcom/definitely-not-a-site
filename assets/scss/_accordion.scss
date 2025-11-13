@@ -1,0 +1,108 @@
+@use "variables";
+
+.accordions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Use the modern gap property to define space between items */
+    gap: 15px; 
+}
+
+.accordion {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-600);
+    
+    /* Fallback margin-bottom, in case gap is not used/supported */
+    margin-bottom: 0; 
+
+    &__title {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        /* Apply minimal, clean padding to the title wrapper */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        @media (min-width: variables.$min-desktop) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        > h2 {
+            /* Aggressively zero out the global margin from the typography file */
+            margin-block-start: 0 !important; 
+            margin-block-end: 0 !important;
+
+            line-height: 26px;
+            font-size: 20px;
+            text-transform: none;
+            color: var(--text-color);
+            font-family: var(--rounded-font-family);
+            font-style: normal;
+            font-weight: 700;
+            
+            /* No padding on h2, as it's handled by the parent &__title */
+            padding-top: 0; 
+            padding-bottom: 0;
+            
+            /* Reduced margin to give long titles more room */
+            margin-inline-end: 16px;
+            @media (min-width: variables.$min-desktop) {
+                font-size: 30px;
+                line-height: 50px;
+                
+                padding-top: 0; 
+                padding-bottom: 0; 
+
+                /* Reduced margin on desktop */
+                margin-inline-end: 20px;
+            }
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        will-change: max-height;
+        transition: all 0.25s ease-out;
+        opacity: 0;
+
+        > * {
+            max-width: var(--content-width);
+        }
+
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .cross {
+        flex-grow: 0;
+        flex-shrink: 0;
+        .vertical {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    &__active {
+        .accordion__title {
+            .cross .vertical {
+                opacity: 0;
+            }
+        }
+
+        .accordion__content {
+            margin-bottom: 20px;
+            opacity: 1;
+            @media (min-width: variables.$min-desktop) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

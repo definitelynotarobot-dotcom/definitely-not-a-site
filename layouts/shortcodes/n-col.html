@@ -1,0 +1,5 @@
+{{ $width := .Get "width" | default "50%" }}
+
+<div class="custom-n-col-item" style="width: {{ $width }};">
+    {{ .Inner | .Page.RenderString | safeHTML }} 
+</div>

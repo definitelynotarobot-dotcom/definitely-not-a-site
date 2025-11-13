@@ -1,0 +1,6 @@
+{{ $class := .Get "class" | default "" }}
+<div class="custom-n-col-container {{ $class }}">
+    {{ .Inner }}
+</div>
+
+<!-- <div class="custom-n-col-container">{{ .Inner }}</div> -->

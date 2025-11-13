@@ -1,0 +1,36 @@
+// /* Rotating text animation - DEBUG VERSION */
+// .rotating-words {
+//   display: inline-block;
+//   position: relative;
+//   width: 120px;
+//   text-align: left;
+//   background: yellow; /* TEST - should be visible */
+  
+//   .word {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+    
+//     &:nth-child(1) { 
+//       opacity: 1; /* First word visible */
+//       background: red; /* TEST */
+//     }
+//     &:nth-child(2) { 
+//       opacity: 0; /* Hidden */
+//     }
+//     &:nth-child(3) { 
+//       opacity: 0; /* Hidden */
+//     }
+//   }
+// }
+
+// /* Comment out the animation for now */
+// /*
+// @keyframes rotateWords {
+//   0% { opacity: 0; }
+//   16.66% { opacity: 1; }
+//   33.33% { opacity: 1; }
+//   50% { opacity: 0; }
+//   100% { opacity: 0; }
+// }
+// */

@@ -1,0 +1,64 @@
+en:
+  languageName: English
+  weight: 1
+  ### copyright (markdown can be used) ###
+  copyright: "Copyright &copy; {{< current_year >}} Definitely Not a Robot"
+  title: "Definitely Not a Robot"
+  params:
+    description: "Site Description"
+    ## accessibility ###
+    accessibility:
+      skip_text: "Skip to content"
+      help_text: "Accessibility Statement"
+      help_url: "/accessibility-statement/"
+    ## calls to action ###
+    main_cta:
+      text: "Contact Us"
+      link: "/contactus/"
+    footer_cta:
+      text: "Contact Us"
+      link: "/contactus/"
+  ### example menu showing children ###
+  menu:
+    main:
+    - identifier: "projects"
+      name: "Workplace Projects"
+      url: "/projects/"
+      weight: 1
+
+    - identifier: "community"
+      name: "Community Projects"
+      url: "/projects/community/"
+      weight: 2
+
+    - identifier: "office"
+      name: "At the Workplace"
+      url: "/projects/office/"
+      weight: 2
+      post: "Projects at your workplace, teambuilding at its easiest"
+      parent: "projects"
+
+    - identifier: "makeandtake"
+      name: "Make and Take"
+      url: "/projects/makeandtake/"
+      weight: 3
+      post: "Projects your team can build and take home with them"
+      parent: "projects"
+
+    - identifier: "yourschedule"
+      name: "On Your Schedule"
+      url: "/projects/yourschedule/"
+      weight: 4
+      post: "Projects delivered to you to do when it works for you"
+      parent: "projects"
+
+    - identifier: "faq"
+      name: "FAQ"
+      url: "/faq/"
+      weight: 3
+
+    # - identifier: "about"
+    #   name: "About"
+    #   url: "/about/"
+    #   weight: 4
+

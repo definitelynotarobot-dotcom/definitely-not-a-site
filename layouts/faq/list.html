@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+{{/* The H1 header is commented out below so you can use your own custom centered header in the _index.md content body. */}}
+{{/* <header>
+    <h1 class="title">{{ .Title }}</h1>
+</header> 
+*/}}
+
+{{/* This renders your centered heading (e.g., ## Frequently Asked Questions) and the introductory paragraph from the _index.md file. */}}
+{{ .Content }}
+
+{{/* START Accordion Generation */}}
+<div class="accordions">
+    {{ range .Pages.ByWeight }}
+    
+    {{ $faqID := .Params.faq_id }}
+
+    <div class="faq-item accordion">
+        <div class="faq__title accordion__title" data-target="#{{ $faqID }}">
+            <h2>{{ .Title }}</h2>
+            <svg class="cross" xmlns="http://www.w3.org/2000/svg" width="27" height="26" viewBox="0 0 27 26">
+                <style>
+                    .color { fill: var(--link-color); }
+                </style>
+                <path class="color horizontal" d="M.5 10.92h26v4.16H.5z" />
+                <path class="color vertical" d="M11.42 26V0h4.16v26z" />
+            </svg>
+        </div>
+        
+        <div id="{{ $faqID }}" class="faq__content accordion__content"> 
+            {{ .Content }}
+        </div>
+    </div>
+    
+    {{ end }}
+</div>
+{{/* END Accordion Generation */}}
+
+{{ end }}
