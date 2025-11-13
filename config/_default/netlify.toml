@@ -6,8 +6,8 @@
 [context.production]
   # Netlify uses HUGO_VERSION to know which version of Hugo to use
   # It's best practice to lock this to a specific major version.
-  environment = { HUGO_VERSION = "0.150.0" } 
+  environment = { HUGO_VERSION = "0.123.0" } 
 
 # Use the same version for deploy previews (branch deploys)
 [context.branch-deploy]
-  environment = { HUGO_VERSION = "0.150.0" }
+  environment = { HUGO_VERSION = "0.123.0" }
