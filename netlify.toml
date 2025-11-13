@@ -1,9 +1,13 @@
 [build]
 
-# Step 1: Run npm ci to install all Node dependencies (including sass-embedded).
-# Step 2: Run the Hugo build using 'npx' to ensure Hugo correctly finds and utilizes 
-# the locally installed Node executables (like the Dart Sass compiler).
-command = "npm ci && npx hugo --gc --minify"
+# Step 1: Run npm ci to install all Node dependencies (including the 'sass' executable).
+# Step 2: Set SCSS_EXECUTABLE to the exact path of the Node-installed 'sass' binary 
+#         (relative to the project root) to eliminate the "connection is shut down" error.
+command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass npx hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
+
+[build.environment]
+# Retain NODE_VERSION 18 for compatibility, as Node 18 is stable and modern.
+NODE_VERSION = "18"
