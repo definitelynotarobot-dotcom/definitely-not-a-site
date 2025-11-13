@@ -1,15 +1,9 @@
 [build]
 
-
-command = "npm ci && hugo --gc --minify"
+# Step 1: Run npm ci to install all Node dependencies (including sass-embedded).
+# Step 2: Run the Hugo build using 'npx' to ensure Hugo correctly finds and utilizes 
+# the locally installed Node executables (like the Dart Sass compiler).
+command = "npm ci && npx hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
-
-[context.production]
-
-# Setting HUGO_VERSION to match the version explicitly required by the theme (0.148.1).
-environment = { HUGO_VERSION = "0.148.1" }
-
-[context.branch-deploy]
-environment = { HUGO_VERSION = "0.148.1" }
