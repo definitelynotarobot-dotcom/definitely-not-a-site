@@ -1,13 +1,15 @@
 [build]
-  # Hugo build command
-  publish = "public"
-  command = "hugo --gc --minify"
+
+
+command = "npm ci && hugo --gc --minify"
+
+# Hugo output directory
+publish = "public"
 
 [context.production]
-  # Netlify uses HUGO_VERSION to know which version of Hugo to use
-  # It's best practice to lock this to a specific major version.
-  environment = { HUGO_VERSION = "0.123.0" } 
 
-# Use the same version for deploy previews (branch deploys)
+# Setting HUGO_VERSION to match the version explicitly required by the theme (0.148.1).
+environment = { HUGO_VERSION = "0.148.1" }
+
 [context.branch-deploy]
-  environment = { HUGO_VERSION = "0.123.0" }
+environment = { HUGO_VERSION = "0.148.1" }
