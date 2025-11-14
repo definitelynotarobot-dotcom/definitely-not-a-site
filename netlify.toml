@@ -1,8 +1,21 @@
 [build]
+  # Directory to publish
   publish = "public"
+  # Build command: install npm packages, point Hugo to the local Sass binary, then build
   command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass npx hugo-bin --gc --minify"
 
 [build.environment]
+  # Enable Git info for Hugo
   HUGO_ENABLEGITINFO = "true"
+  # Use Node 22 (matches your local setup)
   NODE_VERSION = "22.20.0"
+  # Use this Dart Sass version
   DART_SASS_VERSION = "1.94.0"
+  # Optional: force Hugo extended version if needed
+  HUGO_VERSION = "0.152.2"
+
+# Optional: headers if needed
+[[headers]]
+  for = "/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "*"
