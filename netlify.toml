@@ -1,8 +1,8 @@
 [build]
-publish = "public"
-command = "npm ci && npx hugo-bin --gc --minify"
+  publish = "public"
+  command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass npx hugo-bin --gc --minify"
 
 [build.environment]
-HUGO_ENABLEGITINFO = "true"
-NODE_VERSION = "22.20.0"
-DART_SASS_VERSION = "1.93.2"
+  HUGO_ENABLEGITINFO = "true"
+  NODE_VERSION = "22.20.0"
+  DART_SASS_VERSION = "1.94.0"
