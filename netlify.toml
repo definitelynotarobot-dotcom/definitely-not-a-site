@@ -1,0 +1,14 @@
+[build]
+
+# CRITICAL: We rely purely on the HUGO_VERSION setting below.
+command = "hugo --gc --minify"
+
+# Hugo output directory
+publish = "public"
+
+[build.environment]
+# Setting a recent, known stable version of Hugo Extended to avoid SASS pipe errors.
+HUGO_VERSION = "0.121.1"
+
+# Retain Node 18 for compatibility with PostCSS/Autoprefixer.
+NODE_VERSION = "18"
