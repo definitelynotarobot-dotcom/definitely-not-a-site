@@ -1,0 +1,15 @@
+{{/* This custom partial explicitly links to the ICO and PNG files located 
+    at the static root (e.g., /favicon.ico and /favicon-32x32.png) 
+    to ensure maximum browser compatibility and correct paths on Netlify.
+*/}}
+
+<!-- 1. Broad Compatibility (Used by older browsers and as a default) -->
+<link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+
+<!-- 2. High-Resolution Tabs (Modern browsers) -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+
+<!-- Optional: You can add an Apple Touch Icon if you have that file -->
+{{ if (fileExists "static/apple-touch-icon.png") }}
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}" />
+{{ end}}
