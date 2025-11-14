@@ -1,5 +1,5 @@
 ---
-title: Let's build something together!
+title: People Powered Projects.
 description: Where teambuilding meets community impact.
 showHeader: false
 layout: "single"
