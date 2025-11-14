@@ -1,16 +1,16 @@
 [build]
 
-# CRITICAL FIX: The addition of '--baseURL $URL' forces Hugo to generate all 
-# asset links using your custom domain (e.g., https://yourdomain.com), 
-# fixing the "messed up" appearance due to broken CSS paths.
-command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass-embedded hugo --baseURL $URL --gc --minify"
+# The command is clean, relying on the HUGO_BASEURL environment variable set below.
+command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass-embedded hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
 
 [build.environment]
-# Confirmed stable Hugo Extended version
-HUGO_VERSION = "0.121.1"
+# CRITICAL FIX: Netlify's $URL variable is injected as HUGO_BASEURL, 
+# forcing all asset links to use your custom domain (e.g., https://yourdomain.com).
+HUGO_BASEURL = "$URL"
 
-# Latest stable LTS Node version
+# Confirmed stable versions
+HUGO_VERSION = "0.121.1"
 NODE_VERSION = "20"
