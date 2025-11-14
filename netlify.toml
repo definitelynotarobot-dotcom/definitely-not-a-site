@@ -1,7 +1,9 @@
 [build]
 
-# Explicitly setting the path to the sass-embedded binary.
-command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass-embedded hugo --gc --minify"
+# CRITICAL FIX: The addition of '--baseURL $URL' forces Hugo to generate all 
+# asset links using your custom domain (e.g., https://yourdomain.com), 
+# fixing the "messed up" appearance due to broken CSS paths.
+command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass-embedded hugo --baseURL $URL --gc --minify"
 
 # Hugo output directory
 publish = "public"
@@ -10,5 +12,5 @@ publish = "public"
 # Confirmed stable Hugo Extended version
 HUGO_VERSION = "0.121.1"
 
-# Latest stable LTS Node version to minimize environmental warnings
+# Latest stable LTS Node version
 NODE_VERSION = "20"
