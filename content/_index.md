@@ -1,6 +1,6 @@
 ---
-title: Definitely Not a Robot
-description: Homepage for Definitely Not a Robot, links to community projects, services, About/FAQ pages.
+title: Let's build something together!
+description: Where teambuilding meets community impact.
 showHeader: false
 layout: "single"
 ---
