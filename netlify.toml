@@ -1,16 +1,14 @@
 [build]
 
-# Step 1: Install Node dependencies (including 'sass').
-# Step 2: Run the Hugo command. Hugo will now find the 'sass' executable 
-#         installed in node_modules and use it to compile the SCSS.
-command = "npm ci && hugo --gc --minify"
+
+command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
 
 [build.environment]
-# Set a recent, known stable version of Hugo Extended.
+# Set a recent, stable version of Hugo Extended
 HUGO_VERSION = "0.121.1"
 
-# Retain Node 18 for compatibility.
-NODE_VERSION = "18"
+
+NODE_VERSION = "20"
