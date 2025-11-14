@@ -70,4 +70,4 @@ If you have any questions about this Privacy Policy, please contact us:
 
 * **By email:** [hello@definitelynotarobot.com](mailto:hello@definitelynotarobot.com)
 
-* **By visiting our contact page:** [/contactus/](https://www.google.com/search?q=/contactus/)
+* **Or through our** **[Contact Us]({{< ref "contactus.md" >}})** page.

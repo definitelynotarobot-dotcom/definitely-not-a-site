@@ -53,4 +53,5 @@ If you have any questions about these Terms, please contact us:
 
 * **By email:** [hello@definitelynotarobot.com](mailto:hello@definitelynotarobot.com)
 
-* **By visiting this page:** [/contactus/]
+* **Or through our** **[Contact Us]({{< ref "contactus.md" >}})** page.
+
