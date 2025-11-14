@@ -1,14 +1,14 @@
 [build]
 
-
-command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass hugo --gc --minify"
+# Explicitly setting the path to the sass-embedded binary.
+command = "npm ci && SCSS_EXECUTABLE=./node_modules/.bin/sass-embedded hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
 
 [build.environment]
-# Set a recent, stable version of Hugo Extended
+# Confirmed stable Hugo Extended version
 HUGO_VERSION = "0.121.1"
 
-
+# Latest stable LTS Node version to minimize environmental warnings
 NODE_VERSION = "20"

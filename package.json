@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "prettier": "^3.6.2",
-    "sass": "^1.94.0"
+    "sass-embedded": "^1.77.2"
   },
   "type": "commonjs"
 }
