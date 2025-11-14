@@ -1,14 +1,16 @@
 [build]
 
-# CRITICAL: We rely purely on the HUGO_VERSION setting below.
-command = "hugo --gc --minify"
+# Step 1: Install Node dependencies (including 'sass').
+# Step 2: Run the Hugo command. Hugo will now find the 'sass' executable 
+#         installed in node_modules and use it to compile the SCSS.
+command = "npm ci && hugo --gc --minify"
 
 # Hugo output directory
 publish = "public"
 
 [build.environment]
-# Setting a recent, known stable version of Hugo Extended to avoid SASS pipe errors.
+# Set a recent, known stable version of Hugo Extended.
 HUGO_VERSION = "0.121.1"
 
-# Retain Node 18 for compatibility with PostCSS/Autoprefixer.
+# Retain Node 18 for compatibility.
 NODE_VERSION = "18"
